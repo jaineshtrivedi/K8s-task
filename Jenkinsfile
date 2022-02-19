@@ -21,6 +21,7 @@ pipeline {
                 steps {
 
                      sh 'java --version'
+                     sh './k8s.sh'
                   }
              }
 
