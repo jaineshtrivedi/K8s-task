@@ -8,7 +8,7 @@ pipeline {
             steps{
                 cleanWs()
                 withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'git-tool')]) {
-                  sh 'git fetch --all'
+                  sh 'git clone https://github.com/jaineshtrivedi/K8s-task.git'
                 }
                 //git url: 'https://github.com/jaineshtrivedi/K8s-task.git'
 
