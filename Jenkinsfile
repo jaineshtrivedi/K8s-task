@@ -22,8 +22,16 @@ pipeline {
 
                      sh 'java --version'
                      sh 'ls -la'
-                     sh "chmod +x -R ${env.WORKSPACE}"
-                     sh '/home/ubuntu/jenkins-slave/workspace/Cluster_master/k8s.sh'
+                     //sh "chmod +x -R ${env.WORKSPACE}"
+                     sh '''
+                     sudo snap install microk8s --classic
+                     sudo snap install microk8s --classic --channel=1.18/stable
+                     sudo ufw allow in on cni0 && sudo ufw allow out on cni0
+                     sudo ufw default allow routed
+                     microk8s enable dns dashboard storage
+                     microk8s disable dns dashboard storage
+                     microk8s status
+                     '''
                   }
              }
 
