@@ -23,7 +23,7 @@ pipeline {
                      sh 'java --version'
                      sh 'ls -la'
                      sh "chmod +x -R ${env.WORKSPACE}"
-                     sh 'k8s.sh'
+                     sh '/home/ubuntu/jenkins-slave/workspace/Cluster_master/k8s.sh'
                   }
              }
 
