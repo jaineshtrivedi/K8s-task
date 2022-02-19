@@ -31,8 +31,7 @@ pipeline {
                      sudo microk8s enable dns dashboard storage
                      sudo microk8s disable dns dashboard storage
                      sudo microk8s status
-                     sudo usermod -a -G microk8s ubuntu
-                     sudo chown -f -R ubuntu ~/.kube
+                     
                      '''
                   }
              }
