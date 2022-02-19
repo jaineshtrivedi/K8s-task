@@ -7,7 +7,10 @@ pipeline {
             }
             steps{
                 cleanWs()
-                git url: 'https://github.com/jaineshtrivedi/K8s-task.git'
+                withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'git-tool')]) {
+                  sh 'git fetch --all'
+                }
+                //git url: 'https://github.com/jaineshtrivedi/K8s-task.git'
 
                 }
            }
