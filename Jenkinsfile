@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('checkout') {
             agent {
-                node {
                 label 'slave'
             }
             steps{
@@ -12,7 +11,6 @@ pipeline {
 
                 }
            }
-        }
         stage('Java Version') {
               agent {
                          label 'slave'
@@ -22,5 +20,6 @@ pipeline {
                      bat 'java --version'
                   }
              }
+
         }
     }
