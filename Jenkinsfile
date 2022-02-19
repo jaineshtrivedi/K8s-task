@@ -1,38 +1,24 @@
 pipeline {
     agent none
-    environment {
-     workspace1 = 'C:\\Users\\shifali.srivastava\\Desktop\\INFOSYS\\JANUARY\\Jenkins\\workspace'
-    }
     stages {
         stage('checkout') {
             agent {
                 node {
-                label 'master'
-                customWorkspace "${workspace1}"
-                   }
+                label 'slave'
             }
             steps{
                 cleanWs()
-                git url: 'https://github.com/shifali0102/my-app.git'
+                git url: 'https://github.com/jaineshtrivedi/K8s-task.git'
 
                 }
            }
-        stage('Gradle Version') {
+        stage('Java Version') {
               agent {
-                         label 'master'
+                         label 'slave'
                      }
                 steps {
 
-                     bat 'gradle --version'
-                  }
-             }
-        stage('Gradle Version node') {
-              agent {
-            label 'windows'
-                     }
-                steps {
-                   // git url: 'https://github.com/shifali0102/my-app1.git'
-                     bat 'gradle --version'
+                     bat 'java --version'
                   }
              }
         }
