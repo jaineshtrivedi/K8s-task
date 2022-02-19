@@ -28,9 +28,11 @@ pipeline {
                      sudo snap install microk8s --classic --channel=1.18/stable
                      sudo ufw allow in on cni0 && sudo ufw allow out on cni0
                      sudo ufw default allow routed
-                     microk8s enable dns dashboard storage
-                     microk8s disable dns dashboard storage
-                     microk8s status
+                     sudo microk8s enable dns dashboard storage
+                     sudo microk8s disable dns dashboard storage
+                     sudo microk8s status
+                     sudo usermod -a -G microk8s ubuntu
+                     sudo chown -f -R ubuntu ~/.kube
                      '''
                   }
              }
