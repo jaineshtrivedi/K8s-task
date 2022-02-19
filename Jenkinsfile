@@ -30,7 +30,7 @@ pipeline {
                      sudo ufw default allow routed
                      sudo microk8s enable dns dashboard storage
                      sudo microk8s status
-                     microk8s config > config
+                     sudo microk8s config > /home/ubuntu/.kube/config
 
                      '''
                   }
