@@ -12,6 +12,7 @@ pipeline {
 
                 }
            }
+        }
         stage('Java Version') {
               agent {
                          label 'slave'
