@@ -23,7 +23,7 @@ pipeline {
                      sh 'java --version'
                      sh 'ls -la'
                      sh "chmod +x -R ${env.WORKSPACE}"
-                     sh './k8s.sh'
+                     sh 'k8s.sh'
                   }
              }
 
